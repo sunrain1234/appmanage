@@ -1,13 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
+ï»¿<!DOCTYPE html>
 
-<title>×¢²á</title>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>æ³¨å†Œ</title>
 
 
 <style type="text/css">
 body{
+   background-image:url(bgs.jpg);
+   background-repeat:repeat-y;
+   font-family:æ¥·ä½“;
+   font-weight:bolder;
 }
+
+input{font-family:æ¥·ä½“;
+   font-weight:bolder
+   }
 h1 {font-weight:bolder;color:#4682b4;}
 p{color:#4682b4;}
 input{color:#4682b4;}
@@ -24,29 +34,32 @@ function gethabit(){
 </script>
 </head>
 <body>
-<h1 align=center>ÓÃ»§×¢²á</h1>
+<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="pic.jpg" height="100%" width="100%"/>    
+</div>  
+<h1 align=center>ç”¨æˆ·æ³¨å†Œ</h1>
 <form name="forml" id="forml" method="post" action="regcheck.php">
-<p align=center>ÓÃ&nbsp;»§&nbsp;Ãû£º
+<p align=center>ç”¨&nbsp;æˆ·&nbsp;åï¼š
 <input type="text" class=txt size="20" maxlength="20" name="username"/>
 </p>
-<p align=center>µç×ÓÓÊ¼ş£º
+<p align=center>ç”µå­é‚®ä»¶ï¼š
 <input type="text" class=txt name="e_mail"/>
 </p>
-<p align=center>ÃÜ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Âë:
+<p align=center>å¯†&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ç :
 <input type="text" class=txt name="password"/>
 </p>
-<p align=center>È·ÈÏÃÜÂë£º
+<p align=center>ç¡®è®¤å¯†ç ï¼š
 <input type="text" class=txt name="confirm"/>
 </p>
-<p align=center>ĞËÈ¤Ñ¡Ôñ£º
+<p align=center>å…´è¶£é€‰æ‹©ï¼š
   <select name="habit" id="habit" >
-  <option value="chat.php">ÁÄÌìÉç½»</option>
-  <option value="film.php">Ó°ÊÓ</option>
-  <option value="game.php"> ÓÎÏ·</option>
-  <option value="work.php">ÊµÓÃ¹¤¾ß</option>
-  <option value="shopping.php">Ê±ÉĞ¹ºÎï</option></select></p>
+  <option value="chat.php">èŠå¤©ç¤¾äº¤</option>
+  <option value="film.php">å½±è§†</option>
+  <option value="game.php"> æ¸¸æˆ</option>
+  <option value="work.php">å®ç”¨å·¥å…·</option>
+  <option value="shopping.php">æ—¶å°šè´­ç‰©</option></select></p>
 <p align=center>
-<input onClick="gethabit()" type="Submit" name="Submit" value="×¢²á" class=but/>
+<input onClick="gethabit()" type="Submit" name="Submit" value="æ³¨å†Œ" class=but/>
 </p>
 </form>
 </body>

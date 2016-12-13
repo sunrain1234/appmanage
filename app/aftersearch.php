@@ -1,31 +1,62 @@
-<?php
-if(isset($_POST["submit"]) && $_POST["submit"] == "ËÑË÷"){
+ï»¿<?php
+header("Content-Type: text/html; charset=utf-8");
+$servername = "xwwfogmxxpww.mysql.sae.sina.com.cn:10588";
+$username = "root";
+$password = "123456";
+$dbname = "app";
+if(isset($_POST["submit"]) && $_POST["submit"] == "æœç´¢"){
     $name=$_POST["name"];
-    $con=mysqli_connect("localhost","root","1234","app");
+    $con=mysqli_connect($servername,$username,$password,$dbname);
     if (mysqli_connect_errno())
     {
-        echo "Á¬½ÓÊ§°Ü: " . mysqli_connect_error();
+        echo "è¿æ¥å¤±è´¥: " . mysqli_connect_error();
     }
-    $sql = "select * from game where name like '%" .$name. "%'";
+    $sql = "select * from total where name like '%" .$name. "%'";
     $result=mysqli_query( $con,$sql);
-    while($row = mysqli_fetch_array($result))
- 
-{
- 
-echo "<div style=\"height:24px; line-height:24px; font-weight:bold;\">"; //ÅÅ°æ´úÂë
- 
-echo $row['name'] . "<br/>";
+    
+        if($row = mysqli_fetch_array($result)){
+ echo "<div id='Layer1' style='position:absolute; width:100%; height:100%; z-index:-1'> <img src='pic.jpg' height='100%' width='100%'/> </div>  ";    
+     
 
-echo "</div>"; //ÅÅ°æ´úÂë
+ echo "<div style=\"height:24px; line-height:24px; font-weight:bold;\">"; //æ’ç‰ˆä»£ç 
+ echo "<table width='300' border='0' cellspacing='0' cellpadding='0'  align='center' style='clolor:blue; font-size:14px; font-weight:bold' >";
+do{
  
-}
+
+
+echo "<tr>";
+echo "<td width='100px' style=' display:block; overflow:hidden; clear:both;  height:40px;'>";  
+echo $row['name'];
+echo "</td>";
+echo "<td width='100px' style=' display:block; overflow:hidden; clear:both;  height:40px;'>"; 
+echo "<a href=";
+echo $row['download'];
+echo " target='_blank'";
+echo " >";
+echo "ç‚¹å‡»ä¸‹è½½";
+echo "</a>";
+echo "</td>";
+echo "<td>";
+echo $row['introduction'];
+echo "</td>";
+echo "</tr>";
+
+}while($row = mysqli_fetch_array($result));
+echo "</table>";
+echo "</div>"; //æ’ç‰ˆä»£ç 
+
+        }else{
+            echo "æœç´¢ä¸åˆ°ï¼Œè¯·è‡ªè¡Œç™¾åº¦";
+        }
+   
 $con->close();
     
 }
 else
 {
-    echo "<script>alert('Ìá½»Î´³É¹¦£¡'); history.go(-1);</script>";
+    echo "<script>alert('æäº¤æœªæˆåŠŸï¼'); history.go(-1);</script>";
 }
+echo"<div><a href=index.htmlè¿”å›ç™»é™†å‰ç•Œé¢</a></div>";
 
 ?>
 

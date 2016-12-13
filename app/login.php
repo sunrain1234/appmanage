@@ -1,11 +1,19 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 <head>
-
-<title>ÓÃ»§µÇÂ¼</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ç”¨æˆ·ç™»å½•</title>
 <style type="text/css">
 body{
+   background-image:url(bgs.jpg);
+   background-repeat:repeat-y;
+   font-family:æ¥·ä½“;
+   font-weight:bolder;
 }
+
+input{font-family:æ¥·ä½“;
+   font-weight:bolder
+   }
 h1 {font-weight:bolder;color:#4682b4;}
 p{color:#4682b4;}
 input{color:#4682b4;}
@@ -13,21 +21,24 @@ a{color:#4682b4;}
 </style>
 </head>
 <body>
+<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="pic.jpg" height="100%" width="100%"/>    
+</div>  
 <div>
-<h1 align=center>ÓÃ»§µÇÂ¼</h1>
+<h1 align=center>ç”¨æˆ·ç™»å½•</h1>
 <form action="logincheck.php" method="post">
 <p align=center>
-ĞÕÃû£º<input type="text" id=name name="username"/>
+å§“åï¼š<input type="text" id=name name="username"/>
 </p>
 <p align=center>
-ÃÜÂë£º<input type="password" id=password name="password"/>
+å¯†ç ï¼š<input type="password" id=password name="password"/>
 </p>
 
 <p align=center>
 
-<input type="submit" name="submit" value="µÇÂ½" />
+<input type="submit" name="submit" value="ç™»é™†" />
 
-<a href="register.php">×¢²á</a>
+<a href="register.php">æ³¨å†Œ</a>
 
 </p>
 </form>

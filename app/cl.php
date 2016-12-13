@@ -1,12 +1,20 @@
-<!DOCTYPE html>
+О╩©<!DOCTYPE html>
 <html>
 <head>
+<style type="text/CSS">
+ body{
+ font-family:"Ф╔╥Д╫⌠";
+ font-size:16px;
+ font-style:normal;
+ font-color:blue;
+}
+</style>
 </head>
 <body>
 <div id=cl>
-  <li><a href="chat.php">адлЛиГ╫╩</a></li>
-  <li><a href="film.php">с╟йс</a></li>
-  <li><a href="game.php">сно╥</a></li>
-  <li><a href="work.php">й╣сц╧╓╬ъ</a></li>
-  <li><a href="shopping.php">й╠ип╧╨нО</a></li>
+  <li><a href="chat.php">Х│┼Е╓╘Г╓╬Д╨╓</a></li>
+  <li><a href="film.php">Е╫╠Х╖├</a></li>
+  <li><a href="game.php">Ф╦╦Ф┬▐</a></li>
+  <li><a href="work.php">Е╝·Г■╗Е╥╔Е┘╥</a></li>
+  <li><a href="shopping.php">Ф≈╤Е╟ Х╢╜Г┴╘</a></li>
 </body>

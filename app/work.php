@@ -10,7 +10,7 @@ $dbname = "app";
     {
         echo "连接失败: " . mysqli_connect_error();
     }
-    $sql = "select * from shopping ";
+    $sql = "select * from work ";
     $result=mysqli_query( $con,$sql);
 echo "<div style=\"height:24px; line-height:24px; font-weight:bold;\">";
 echo "<table width='300' border='0' cellspacing='0' cellpadding='0'  align='center' style='clolor:blue; font-size:14px; font-weight:bold' >";

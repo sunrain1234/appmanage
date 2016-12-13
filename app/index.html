@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css">
 body{
    background-image:url(bgs.jpg);
    background-repeat:repeat-y;
-
+   font-family:æ¥·ä½“;
+   font-weight:bolder;
 }
+
+input{font-family:æ¥·ä½“;
+   font-weight:bolder
+   }
 <!--#menu{
   position:absolute;
   top:180px;
@@ -33,7 +39,7 @@ color:grey;
 #menu a:hover{
  color:pink;
 }-->
-h1 {font-weight:bolder;color:#4682b4;}
+h1 {color:#4682b4;}
 
 a{
    background:transparent url(bgs.jpg) none-repeat;
@@ -57,14 +63,11 @@ li{float:left;width:254px;text-align:center;line-height:28px;height:28px;cursor:
 
 </style>
 <script>
-
-	   document.write("<h1>app¹ÜÀí²éÑ¯ÏµÍ³</h1>");
-        document.write("<h1>ÄãºÃ£¡»¶Ó­Ê¹ÓÃ</h1>");
-       
+	//document.write("<h1>appç®¡ç†æŸ¥è¯¢ç³»ç»Ÿ</h1>");
 function validateForm() {
     var x = document.forms["myForm"]["fname"].value;
     if (x == null || x == "") {
-        alert("ĞèÒªÊäÈëËÑË÷ÄÚÈİ");
+        alert("éœ€è¦è¾“å…¥æœç´¢å†…å®¹");
         return false;
     }
 }
@@ -103,40 +106,49 @@ document.getElementById("con_"+name_0+"_"+links_len).parentNode.onmouseover=func
 clearInterval(iIntervalId); 
 } 
 setTab(name_0,cursel_0); 
-
-}
-
+} 
 </script>
 <body >
-<form name="myForm" action="search.php"
+<form name="login" action="login.php">
+<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="pic.jpg" height="100%" width="100%"/>    
+</div>   
+<h1>appç®¡ç†æŸ¥è¯¢ç³»ç»Ÿ</h1>
+<p>
+<input type="submit" name="log" value="ç™»é™†" >
+</p>
+</form>
+<form name="register" action="register.php">
+<p>
+<input type="submit" name="res" value="æ³¨å†Œ">
+</p>
+</form>
+<form name="myForm" action="aftersearch.php"
 onsubmit="return validateForm()" method="post">
 <div>
-<p>
 
-<input type="submit" value=ÍË³ö>
-</p>
 <p align=center>
-ËÑË÷ÄÚÈİ<input type="text" name="fname">
-	<input type="submit" value="ËÑË÷"class=button>
+æœç´¢å†…å®¹<input type="text" name="name">
+	<input type="submit" name="submit" value="æœç´¢">
 </p>
 </div>
 <div class="tab1" id="tab1"> 
 <div class="menu"> 
 <ul> 
-<li id="one1" onclick="setTab('one',1)">Èí¼ş·ÖÀà</li> 
-<li id="one2" onclick="setTab('one',2)">ĞËÈ¤ÍÆ¼ö</li> 
-<li id="one3" onclick="setTab('one',3)">¸öÈËÖĞĞÄ</li> 
+<li id="one1" onclick="setTab('one',1)">è½¯ä»¶åˆ†ç±»</li> 
+<li id="one2" onclick="setTab('one',2)">å…´è¶£æ¨è</li> 
+<li id="one3" onclick="setTab('one',3)">æ„è§åŒº</li> 
 </ul> 
-</div> 
+</div>
 <div class="menudiv"> 
   <div id="con_one_1">
-    <iframe src=cl.html scrolling="auto" name="c" align=center border=0 frameborder="0" width=100% height=100%></iframe>
+    <iframe src=cl.php scrolling="auto" name="c" align=center border=0 frameborder="0" width=100% height=100%></iframe>
   </div> 
   <div id="con_one_2" style="display:none;">
-    <iframe src=intrest.html scrolling="auto" name="c" align=center border=0 frameborder="0" width=100% height=100%></iframe>
+    <iframe src=habit.php scrolling="auto" name="c" align=center border=0 frameborder="0" width=100% height=100%></iframe>
   </div> 
-<div id="con_one_3" style="display:none;"><h4 style="color:red">±êÇ©3-ÄÚÈİ</h4></div> 
- 
+<div id="con_one_3" style="display:none;">
+    <iframe src=conment.php scrolling="auto" name="c" align=center border=0 frameborder="0" width=100% height=100%></iframe>
 </div> 
 </div> 
 </form>

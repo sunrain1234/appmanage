@@ -1,20 +1,24 @@
-<?php
-
-if(isset($_POST["submit"]) && $_POST["submit"] == "µÇÂ½")
+ï»¿<?php
+header("Content-Type: text/html; charset=utf-8");
+$servername = "xwwfogmxxpww.mysql.sae.sina.com.cn:10588";
+$username = "root";
+$password = "123456";
+$dbname = "app";
+if(isset($_POST["submit"]) && $_POST["submit"] == "ç™»é™†")
 {
     $user = $_POST["username"];
     $psw = $_POST["password"];
     
     if($user == "" || $psw == "")
     {
-        echo "<script>alert('ÇëÊäÈëÓÃ»§Ãû»òÃÜÂë£¡'); history.go(-1);</script>";
+        echo "<script>alert('è¯·è¾“å…¥ç”¨æˆ·åæˆ–å¯†ç ï¼'); history.go(-1);</script>";
     }
     else
     {
-        $con=mysqli_connect("localhost","root","1234","app");
+        $con=mysqli_connect($servername,$username,$password,$dbname);
         if (mysqli_connect_errno())
         {
-            echo "Á¬½ÓÊ§°Ü: " . mysqli_connect_error();
+            echo "è¿æ¥å¤±è´¥: " . mysqli_connect_error();
         }
     
         $result=mysqli_query( $con,"SELECT  *from users where username='$user' ");
@@ -23,14 +27,14 @@ if(isset($_POST["submit"]) && $_POST["submit"] == "µÇÂ½")
        $row = mysqli_fetch_array($result);
        if ($row['username'] == $user && $row['password'] == $psw) {
            $habit=$row['habit'];
-           echo "<script>alert('µÇÂ½³É¹¦');</script>";
+           echo "<script>alert('ç™»é™†æˆåŠŸ');</script>";
            
        }else{
-           echo "<script>alert('ÃÜÂë´íÎó'); history.go(-1);</script>";
+           echo "<script>alert('å¯†ç é”™è¯¯'); history.go(-1);</script>";
        }
        
        
-           	//½«Êı¾İÒÔË÷Òı·½Ê½´¢´æÔÚÊı×éÖĞ
+           	//å°†æ•°æ®ä»¥ç´¢å¼•æ–¹å¼å‚¨å­˜åœ¨æ•°ç»„ä¸­
       
        
        
@@ -38,19 +42,25 @@ if(isset($_POST["submit"]) && $_POST["submit"] == "µÇÂ½")
 }
 else
 {
-    echo "<script>alert('Ìá½»Î´³É¹¦£¡'); history.go(-1);</script>";
+    echo "<script>alert('æäº¤æœªæˆåŠŸï¼'); history.go(-1);</script>";
 }
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css">
 body{
-   background-image:url(bgs.jpg);
+   background-image:url(pic.jpg);
    background-repeat:repeat-y;
-
+   font-family:æ¥·ä½“;
+   font-weight:bolder;
 }
+
+input{font-family:æ¥·ä½“;
+   font-weight:bolder
+   }
 <!--#menu{
   position:absolute;
   top:180px;
@@ -102,13 +112,13 @@ li{float:left;width:254px;text-align:center;line-height:28px;height:28px;cursor:
 </style>
 <script>
 
-	   document.write("<h1>app¹ÜÀí²éÑ¯ÏµÍ³</h1>");
-        document.write("<h1>ÄãºÃ<?php echo $user;?>£¡»¶Ó­Ê¹ÓÃ</h1>");
+	  // document.write("<h1>appç®¡ç†æŸ¥è¯¢ç³»ç»Ÿ</h1>");
+        //document.write("<h1>ä½ å¥½<?php echo $user;?>ï¼æ¬¢è¿ä½¿ç”¨</h1>");
         
 function validateForm() {
     var x = document.forms["myForm"]["fname"].value;
     if (x == null || x == "") {
-        alert("ĞèÒªÊäÈëËÑË÷ÄÚÈİ");
+        alert("éœ€è¦è¾“å…¥æœç´¢å†…å®¹");
         return false;
     }
 }
@@ -149,29 +159,18 @@ clearInterval(iIntervalId);
 setTab(name_0,cursel_0); 
 
 }
-   function interest(habit){
-  	if(habit=="games"){
-  		document.getElementById("id").src="game.php";
-  	 }
-  	 if(habit=="shopping"){
-  	  return "shopping.php";
-  	 }
-  	 if(habit=="chat"){
-  	  return "chat.php";
-  	 }
-  	 if(habit=="work"){
-  	  return "works.php";
-  	 }
-  	 else{
-   		document.getElementById("id").src="cl.php";
-  	 }
-  	}
+   
    	      
 </script>
 <body >
 <form name="exit" action="search.php">
+<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="pic.jpg" height="100%" width="100%"/>    
+</div>   
+<h1>appç®¡ç†æŸ¥è¯¢ç³»ç»Ÿ</h1>
+<h1>ä½ å¥½<?php echo $user;?>ï¼æ¬¢è¿ä½¿ç”¨</h1>
 <p>
-<a href="search.php" class=button>ÍË³ö</a> 
+<a href="index.html" class=button>é€€å‡º</a> 
 </p>
 </form>
 <form name="myForm" action="aftersearch.php"
@@ -180,16 +179,16 @@ onsubmit="return validateForm()" method="post">
 <div>
 
 <p align=center>
-ËÑË÷ÄÚÈİ<input type="text" name="name">
-	<input type="submit" name="submit" value="ËÑË÷">
+æœç´¢å†…å®¹<input type="text" name="name">
+	<input type="submit" name="submit" value="æœç´¢">
 </p>
 </div>
 <div class="tab1" id="tab1"> 
 <div class="menu"> 
 <ul> 
-<li id="one1" onclick="setTab('one',1)">Èí¼ş·ÖÀà</li> 
-<li id="one2" onclick="setTab('one',2)">ĞËÈ¤ÍÆ¼ö</li> 
-<li id="one3" onclick="setTab('one',3)">¸öÈËÖĞĞÄ</li> 
+<li id="one1" onclick="setTab('one',1)">è½¯ä»¶åˆ†ç±»</li> 
+<li id="one2" onclick="setTab('one',2)">å…´è¶£æ¨è</li> 
+<li id="one3" onclick="setTab('one',3)">æ„è§åŒº</li> 
 </ul> 
 </div> 
 <div class="menudiv"> 
@@ -201,8 +200,8 @@ onsubmit="return validateForm()" method="post">
    <iframe src=<?php echo $habit;?> scrolling="auto" id="id" align=center border=0 frameborder="0" width=100% height=100%></iframe>
    
   </div> 
-<div id="con_one_3" style="display:none;"><h4 style="color:red">±êÇ©3-ÄÚÈİ</h4></div> 
- 
+<div id="con_one_3" style="display:none;">
+  <iframe src=conment1.php scrolling="auto" id="id" align=center border=0 frameborder="0" width=100% height=100%></iframe>
 </div> 
 </div> 
 </form>

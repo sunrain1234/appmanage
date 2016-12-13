@@ -1,10 +1,10 @@
-<?php
-$servername = "localhost";
+ï»¿<?php
+$servername = "xwwfogmxxpww.mysql.sae.sina.com.cn:10588";
 $username = "root";
-$password = "1234";
+$password = "123456";
 $dbname = "app";
-
-if(isset($_POST["Submit"]) && $_POST["Submit"] == "×¢²á")
+header("Content-Type: text/html; charset=utf-8");
+if(isset($_POST["Submit"]) && $_POST["Submit"] == "æ³¨å†Œ")
 {
     $user = $_POST["username"];
     $psw = $_POST["password"];
@@ -15,7 +15,7 @@ if(isset($_POST["Submit"]) && $_POST["Submit"] == "×¢²á")
  
     if($user == "" || $psw == "" || $psw_confirm == "" || $e_mail=="")
     {
-        echo "<script>alert('ÇëÈ·ÈÏĞÅÏ¢ÍêÕûĞÔ£¡'); history.go(-1);</script>";
+        echo "<script>alert('è¯·ç¡®è®¤ä¿¡æ¯å®Œæ•´æ€§ï¼'); history.go(-1);</script>";
     }
     else
     {
@@ -33,22 +33,22 @@ if(isset($_POST["Submit"]) && $_POST["Submit"] == "×¢²á")
      
                 if($res_insert==TRUE)
                 {
-                    echo "<script>alert('×¢²á³É¹¦£¡');location='login.php'</script>";
+                    echo "<script>alert('æ³¨å†ŒæˆåŠŸï¼');location='login.php'</script>";
                 }
                 else
                 {
-                    echo "<script>alert('ÏµÍ³·±Ã¦£¬ÇëÉÔºò£¡'); history.go(-1);</script>";
+                    echo "<script>alert('ç³»ç»Ÿç¹å¿™ï¼Œè¯·ç¨å€™ï¼'); history.go(-1);</script>";
                 }
             
         }
         else
         {
-            echo "<script>alert('ÃÜÂë²»Ò»ÖÂ£¡'); history.go(-1);</script>";
+            echo "<script>alert('å¯†ç ä¸ä¸€è‡´ï¼'); history.go(-1);</script>";
         }
     }
 }
 else
 {
-    echo "<script>alert('Ìá½»Î´³É¹¦£¡'); history.go(-1);</script>";
+    echo "<script>alert('æäº¤æœªæˆåŠŸï¼'); history.go(-1);</script>";
 }
 ?>
